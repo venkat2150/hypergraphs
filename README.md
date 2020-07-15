@@ -7,22 +7,29 @@ Coding Credits:
 
 G-Structures to C-Structures: 
 
-
-Algorithm[4]
+Algorithm:
 
 algorithm BronKerbosch2(R, P, X) is
+
     if P and X are both empty then
+    
         report R as a maximal clique
+	
     choose a pivot vertex u in P ⋃ X
+    
     for each vertex v in P \ N(u) do
+    
         BronKerbosch2(R ⋃ {v}, P ⋂ N(v), X ⋂ N(v))
+	
         P := P \ {v}
+	
         X := X ⋃ {v}
 
 
-Approach
 
-	For our project, we recognized that the main problem we needed to solve was figuring out all the maximal cliques of the given G-Structure. Once that step was completed, returning a C-Structure with the same primal graph would be very simple, as we were not changing any edges or vertices in the process of analyzing the G-Structure. For example, when given a G-Structure ‘12/23/13’, our program will return ‘123’ as the desired C-Structure; both of these hypergraphs have the same primal graphs- the same sets of edges and vertices- however it is much easier to see the relations between the vertices using the C-Structure. For this program, it was decided we would use the Bron-Kerbosch Algorithm, one that was briefly mentioned in the paper Clique Guided Community Detection [1].
+Explanation:
+
+For our project, we recognized that the main problem we needed to solve was figuring out all the maximal cliques of the given G-Structure. Once that step was completed, returning a C-Structure with the same primal graph would be very simple, as we were not changing any edges or vertices in the process of analyzing the G-Structure. For example, when given a G-Structure ‘12/23/13’, our program will return ‘123’ as the desired C-Structure; both of these hypergraphs have the same primal graphs- the same sets of edges and vertices- however it is much easier to see the relations between the vertices using the C-Structure. For this program, it was decided we would use the Bron-Kerbosch Algorithm, one that was briefly mentioned in the paper Clique Guided Community Detection [1].
   
   
   To elaborate on the Bron-Kerbosch Algorithm, it sorts the vertices of the graph into three sets. One set, the set of candidate vertices, includes the vertex the algorithm will focus on for one iteration, known as the pivot. The pivots are chosen in order to “minimize recursive calls” [2]. Of the other two sets, one is used to hold every vertex with an edge connecting it to the chosen pivot, while the other holds the discarded pivot when the iteration is completed. When beginning, there is no chosen vertex, and the set that contains all the vertices with an edge connecting it to the chosen pivot is simply a set that contains all vertices in the given structure. When choosing the pivot for the algorithm, the chosen vertex should have the highest degree- the highest number of edges, or connected vertices.
