@@ -54,6 +54,9 @@ At the moment, as a group, we have discussed which algorithm we would use to fin
 Citations
 
 [1] D. Palsetia, M. M. A. Patwary, W. Hendrix, A. Agrawal, and A. Choudhary, “Clique guided community detection,” 2014 IEEE International Conference on Big Data (Big Data), 2014.
+
 [2] C. Bron and J. Kerbosch, “Algorithm 457: finding all cliques of an undirected graph,” Communications of the ACM, vol. 16, no. 9, pp. 575–577, Jan. 1973.
+
 [3] F. Cazals and C. Karande, “A note on the problem of reporting maximal cliques,” Theoretical Computer Science, vol. 407, no. 1-3, pp. 564–568, 2008.
+
 [4] https://www.wikiwand.com/en/Bron%E2%80%93Kerbosch_algorithm
