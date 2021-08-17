@@ -1,10 +1,6 @@
 # hypergraphs
 Generating a reduced conformal hyper-graph from the given hyper-graph
 
-Writing Credits: Mackenzie Dahlem, Willam Csont.
-
-Coding Credits: 
-              C:  Venkata Kautilya Thanneeru.
 
 G-Structures to C-Structures: 
 
